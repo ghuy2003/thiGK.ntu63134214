@@ -9,7 +9,6 @@ import com.example.nguyengiahuy_63134214.service.CategoryService;
 
 import java.util.List;
 
-
 @Controller
 public class ViewController {
     @Autowired
@@ -18,6 +17,7 @@ public class ViewController {
     @GetMapping("/")
     public String home(Model model){
         List<Category> categories = categoryService.getAllCategories();
+        System.out.println(categories);
         model.addAttribute("categories", categories);
         return "index";
     }
